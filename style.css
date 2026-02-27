@@ -17,6 +17,43 @@ body {
   display: none !important;
 }
 
+/* ── Password screen ───────────────────────────────────────── */
+#password-screen {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.error-msg {
+  color: #DC2626;
+  font-size: 0.85rem;
+  text-align: center;
+  width: 100%;
+}
+
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid #CBD5E1;
+  border-radius: 10px;
+  font-size: 0.93rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  color: #1E293B;
+}
+
+.form-group input[type="password"]:focus {
+  border-color: #1D4ED8;
+}
+
+.form-group input[type="password"]::placeholder {
+  color: #94A3B8;
+}
+
 /* ── Start screen ──────────────────────────────────────────── */
 #start-screen {
   width: 100%;
@@ -254,6 +291,25 @@ header {
 
 .header-btn:hover {
   background: rgba(255,255,255,0.28);
+}
+
+/* ── Score badge ───────────────────────────────────────────── */
+.score-badge {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.7);
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.score-badge--nonzero {
+  background: rgba(34,197,94,0.25);
+  border-color: rgba(34,197,94,0.5);
+  color: #86EFAC;
 }
 
 /* ── Chat body ─────────────────────────────────────────────── */

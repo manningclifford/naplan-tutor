@@ -8,8 +8,22 @@
 </head>
 <body>
 
+  <!-- ── Password screen ───────────────────────────────────── -->
+  <div id="password-screen">
+    <div class="start-card">
+      <div class="start-icon">🎓</div>
+      <h1>NAPLAN Year 9<br>Maths Tutor</h1>
+      <p class="start-desc">Enter the password to continue.</p>
+      <div class="form-group">
+        <input type="password" id="password-input" placeholder="Password" />
+      </div>
+      <p id="password-error" class="error-msg hidden">Incorrect password. Please try again.</p>
+      <button class="start-btn" id="password-btn">Enter →</button>
+    </div>
+  </div>
+
   <!-- ── Start screen ─────────────────────────────────────── -->
-  <div id="start-screen">
+  <div id="start-screen" class="hidden">
     <div class="start-card">
       <div class="start-icon">🎓</div>
       <h1>NAPLAN Year 9<br>Maths Tutor</h1>
@@ -74,6 +88,7 @@
         </div>
       </div>
       <div class="header-right">
+        <div id="score-badge" class="score-badge">✓ <span id="score-count">0</span> correct</div>
         <button id="next-question-btn" class="header-btn hidden">Next question →</button>
         <button id="new-chat-btn" class="header-btn">↩ Start over</button>
       </div>
