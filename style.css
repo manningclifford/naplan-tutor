@@ -104,7 +104,61 @@ body {
   color: #94A3B8;
 }
 
-#start-btn {
+/* ── Mode tabs ─────────────────────────────────────────────── */
+.mode-tabs {
+  display: flex;
+  width: 100%;
+  background: #F1F5F9;
+  border-radius: 10px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 9px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #64748B;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.tab-btn.active {
+  background: white;
+  color: #1D4ED8;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ── Topic select ──────────────────────────────────────────── */
+.form-group select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid #CBD5E1;
+  border-radius: 10px;
+  font-size: 0.93rem;
+  font-family: inherit;
+  outline: none;
+  background: white;
+  color: #1E293B;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+.form-group select:focus {
+  border-color: #1D4ED8;
+}
+
+/* ── Start button (shared) ─────────────────────────────────── */
+.start-btn {
   width: 100%;
   padding: 13px;
   background: #1D4ED8;
@@ -118,13 +172,22 @@ body {
   margin-top: 4px;
 }
 
-#start-btn:hover:not(:disabled) {
+.start-btn:hover:not(:disabled) {
   background: #1E40AF;
 }
 
-#start-btn:disabled {
+.start-btn:disabled {
   opacity: 0.45;
   cursor: not-allowed;
+}
+
+/* ── Question divider in chat ──────────────────────────────── */
+.question-divider {
+  text-align: center;
+  color: #94A3B8;
+  font-size: 0.78rem;
+  padding: 8px 0;
+  letter-spacing: 0.5px;
 }
 
 /* ── Chat screen ───────────────────────────────────────────── */
@@ -170,7 +233,13 @@ header {
   margin-top: 1px;
 }
 
-#new-chat-btn {
+.header-right {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.header-btn {
   background: rgba(255,255,255,0.18);
   border: 1px solid rgba(255,255,255,0.35);
   color: white;
@@ -183,7 +252,7 @@ header {
   white-space: nowrap;
 }
 
-#new-chat-btn:hover {
+.header-btn:hover {
   background: rgba(255,255,255,0.28);
 }
 

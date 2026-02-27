@@ -13,30 +13,53 @@
     <div class="start-card">
       <div class="start-icon">🎓</div>
       <h1>NAPLAN Year 9<br>Maths Tutor</h1>
-      <p class="start-desc">
-        I'll guide you through your question step by step — no answers given away, just genuine understanding.
-      </p>
+      <p class="start-desc">Step-by-step guidance — no answers given away, just real understanding.</p>
 
-      <div class="form-group">
-        <label for="question-input">What maths question are you working on?</label>
-        <textarea
-          id="question-input"
-          rows="3"
-          placeholder="e.g. I need help solving 3x + 5 = 20, or I don't understand how to find the area of a circle."
-        ></textarea>
+      <!-- Mode tabs -->
+      <div class="mode-tabs">
+        <button class="tab-btn active" data-mode="own">My Question</button>
+        <button class="tab-btn" data-mode="practice">Practice</button>
       </div>
 
-      <div class="form-group">
-        <label for="hobbies-input">What are some of your hobbies or interests?</label>
-        <input
-          type="text"
-          id="hobbies-input"
-          placeholder="e.g. football, gaming, music, cooking, art…"
-        />
-        <span class="hint">I'll use these to make maths examples more relevant to you!</span>
+      <!-- My Question panel -->
+      <div class="panel" id="panel-own">
+        <div class="form-group">
+          <label for="question-input">What maths question are you working on?</label>
+          <textarea id="question-input" rows="3"
+            placeholder="e.g. I need help solving 3x + 5 = 20, or I don't understand how to find the area of a circle."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="hobbies-own">What are some of your hobbies or interests?</label>
+          <input type="text" id="hobbies-own"
+            placeholder="e.g. football, gaming, music, cooking…" />
+          <span class="hint">I'll use these to make examples more relevant to you!</span>
+        </div>
+        <button class="start-btn" id="start-own-btn" disabled>Let's go →</button>
       </div>
 
-      <button id="start-btn" disabled>Let's go →</button>
+      <!-- Practice panel -->
+      <div class="panel hidden" id="panel-practice">
+        <div class="form-group">
+          <label for="topic-select">Choose a topic</label>
+          <select id="topic-select">
+            <option>Any topic</option>
+            <option>Number</option>
+            <option>Algebra</option>
+            <option>Measurement</option>
+            <option>Geometry</option>
+            <option>Statistics and Probability</option>
+          </select>
+          <span class="hint">Questions are drawn from the 2016 NAPLAN Year 9 Numeracy papers.</span>
+        </div>
+        <div class="form-group">
+          <label for="hobbies-practice">What are some of your hobbies or interests?</label>
+          <input type="text" id="hobbies-practice"
+            placeholder="e.g. football, gaming, music, cooking…" />
+          <span class="hint">I'll use these to make examples more relevant to you!</span>
+        </div>
+        <button class="start-btn" id="start-practice-btn">Start practice →</button>
+      </div>
+
     </div>
   </div>
 
@@ -47,21 +70,20 @@
         <span class="header-icon">🎓</span>
         <div>
           <div class="header-title">NAPLAN Year 9 Maths Tutor</div>
-          <div class="subtitle">Powered by AI · Step-by-step guidance</div>
+          <div class="subtitle" id="chat-subtitle">Step-by-step guidance</div>
         </div>
       </div>
-      <button id="new-chat-btn">↩ New question</button>
+      <div class="header-right">
+        <button id="next-question-btn" class="header-btn hidden">Next question →</button>
+        <button id="new-chat-btn" class="header-btn">↩ Start over</button>
+      </div>
     </header>
 
     <div class="chat-wrapper">
       <div id="chat-box"></div>
-
       <div class="input-area">
-        <textarea
-          id="user-input"
-          rows="1"
-          placeholder="Type your answer or follow-up… (Enter to send)"
-        ></textarea>
+        <textarea id="user-input" rows="1"
+          placeholder="Type your answer or follow-up… (Enter to send)"></textarea>
         <button id="send-btn" disabled>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
                stroke-linecap="round" stroke-linejoin="round">
@@ -74,6 +96,7 @@
   </div>
 
   <script src="config.js"></script>
+  <script src="questions.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
