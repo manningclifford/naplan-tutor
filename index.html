@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAPLAN Year 9 Maths Tutor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Start screen ─────────────────────────────────────── -->
+  <div id="start-screen">
+    <div class="start-card">
+      <div class="start-icon">🎓</div>
+      <h1>NAPLAN Year 9<br>Maths Tutor</h1>
+      <p class="start-desc">
+        I'll guide you through your question step by step — no answers given away, just genuine understanding.
+      </p>
+
+      <div class="form-group">
+        <label for="question-input">What maths question are you working on?</label>
+        <textarea
+          id="question-input"
+          rows="3"
+          placeholder="e.g. I need help solving 3x + 5 = 20, or I don't understand how to find the area of a circle."
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="hobbies-input">What are some of your hobbies or interests?</label>
+        <input
+          type="text"
+          id="hobbies-input"
+          placeholder="e.g. football, gaming, music, cooking, art…"
+        />
+        <span class="hint">I'll use these to make maths examples more relevant to you!</span>
+      </div>
+
+      <button id="start-btn" disabled>Let's go →</button>
+    </div>
+  </div>
+
+  <!-- ── Chat screen ───────────────────────────────────────── -->
+  <div id="chat-screen" class="hidden">
+    <header>
+      <div class="header-left">
+        <span class="header-icon">🎓</span>
+        <div>
+          <div class="header-title">NAPLAN Year 9 Maths Tutor</div>
+          <div class="subtitle">Powered by AI · Step-by-step guidance</div>
+        </div>
+      </div>
+      <button id="new-chat-btn">↩ New question</button>
+    </header>
+
+    <div class="chat-wrapper">
+      <div id="chat-box"></div>
+
+      <div class="input-area">
+        <textarea
+          id="user-input"
+          rows="1"
+          placeholder="Type your answer or follow-up… (Enter to send)"
+        ></textarea>
+        <button id="send-btn" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
